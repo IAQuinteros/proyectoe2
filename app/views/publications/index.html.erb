@@ -1,2 +1,20 @@
-<h1>Publications#index</h1>
-<p>Find me in app/views/publications/index.html.erb</p>
+<h1>Publicaciones</h1>
+
+
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id de publicacion</th>
+      <th scope="col">Imagen </th>
+      <th scope="col">Username</th>
+      <th scope="col">Fecha de creacion</th>
+        <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @publications.each_with_index do |publication,index| %>
+  <%= render partial: 'publication', locals: {publication:publication, index:index } %>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+    <tr>
+      <td>
+      <%= publication.id %>
+      </td>
+      <td>
+      <%= publication.publication_image %>
+      </td>
+      <td>
+      <%= publication.users.username %>
+      </td>
+            <td>
+      <%= publication.data_create %>
+      </td>
+
+      <td>
+        <%= link_to 'Ver', publication_path(publication) %>
+      </td>
+    </tr>
