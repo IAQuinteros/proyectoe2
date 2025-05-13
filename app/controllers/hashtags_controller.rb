@@ -4,6 +4,6 @@ class HashtagsController < ApplicationController
   end
 
   def show
-    @user = Hashtag.find(params[:id])
+    @hashtag = Hashtag.find(params[:id])
   end
 end

@@ -4,6 +4,6 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    @user = Publication.find(params[:id])
+    @publication = Publication.find(params[:id])
   end
 end

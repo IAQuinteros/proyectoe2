@@ -4,6 +4,6 @@ class FollowersController < ApplicationController
   end
 
   def show
-    @user = Follower.find(params[:id])
+    @follower = Follower.find(params[:id])
   end
 end

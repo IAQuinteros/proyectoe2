@@ -1,2 +1,44 @@
-<h1>Publications#show</h1>
-<p>Find me in app/views/publications/show.html.erb</p>
+    <td>
+<%= link_to 'Add new user', new_user_path %>
+</td>
+
+<br>
+<br>
+<h1 class="position-absolute top-0 start-50 translate-middle-x">Detalles del usuario</h1>
+<br>
+<br>
+<div class="card text-bg-light mb-3 mx-auto" style="max-width: 18rem;">
+  <div class="card-header">Informacion</div>
+  <div class="card-body">
+    <p class="card-text">
+    
+    <p>
+<%= @publication.publication_image %>
+</p>
+
+<p>
+<%= @publication.like.all %>
+</p>
+
+<%= @user.username, ":", @publication.description%>
+</p>
+
+<p>
+<%= @publication.hashtag %>
+</p>
+
+<p>
+<%= @publication.comment.all %>
+</p>
+
+<p>
+<strong>Fecha de creacion: </strong>
+<%= @user.date_create %>
+</p>
+
+<td>
+<%= link_to 'Volver', users_path %>
+</td>
+</p>
+  </div>
+  </div>

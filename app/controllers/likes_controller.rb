@@ -4,6 +4,6 @@ class LikesController < ApplicationController
   end
 
   def show
-    @user = Like.find(params[:id])
+    @like = Like.find(params[:id])
   end
 end
