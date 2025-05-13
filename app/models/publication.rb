@@ -1,14 +1,13 @@
 class Publication < ApplicationRecord
-  belongs_to :users
+  belongs_to :users, class_name: "User"
 
-  has_many :publication_image, dependent: :destroy
-  has_many :description, dependent: :destroy
+
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :date_create, presence: true
-  validates :description, presence: true, lenght: {maximun: 255}
-  validates :publication_image, presence: true, lenght: {maximun: 255}
+  validates :data_create, presence: true
+  validates :description, presence: true, length: { maximum: 255}
+  validates :publication_image, presence: true, length: { maximum: 255}
 
 
 end

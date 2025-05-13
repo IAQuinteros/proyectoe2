@@ -1,0 +1,23 @@
+    <tr>
+    <td>
+    <%= index + 1 %>
+    </td>
+      <td>
+      <%= user.name %>
+      </td>
+      <td>
+      <%= user.username %>
+      </td>
+      <td>
+      <%= user.mail %>
+      </td>
+            <td>
+      <%= user.sex %>
+      </td>
+            <td>
+      <%= user.user_image %>
+      </td>
+      <td>
+        <%= link_to 'Ver', user_path(user) %>
+      </td>
+    </tr>

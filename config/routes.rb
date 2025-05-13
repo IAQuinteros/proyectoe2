@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get "hashtags/index"
+  get "hashtags/show"
+  get "comments/index"
+  get "comments/show"
+  get "likes/index"
+  get "likes/show"
+  get "followers/index"
+  get "followers/show"
+  get "publications/index"
+  get "publications/show"
+  get "users/index"
+  get "users/show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,4 +23,22 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :users do 
+    resources :publications, only: [:index, :show]
+    resources :followers, only: [:index, :show]
+    resources :likes, only: [:index, :show]
+    resources :comments, only: [:index, :show]
+  end
+  resources :publications do 
+    resources :likes, only: [:index, :show]
+    resources :comments, only: [:index, :show]
+    resources :hashtags, only: [:index, :show]
+  end
+
+  resources :followers, only: [:index, :show]
+  resources :hashtags, only: [:index, :show]
+  
+
+
 end
