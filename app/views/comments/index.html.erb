@@ -5,18 +5,20 @@
     <thead>
       <tr>
         <th>Usuario</th>
-        <th>Publicación</th>
-        <th>Acción</th>
+        <th>Id - Publicación</th>
+        <th>Comentario</th>
+        <th class="text-end">Acción</th>
       </tr>
     </thead>
     <tbody>
       <% @comments.each do |comment| %>
         <tr>
-          <td><%= comment.user.username if comment.user %></td>
+        <td><%= comment.user.username if comment.user %></td>
         <td>
-            <%= "#{comment.publication.id} - Publicación de #{comment.publication.user.username}" if comment.publication %>
+        <%= "#{comment.publication.id} - Publicación de #{comment.publication.user.username}" if comment.publication %>
         </td>
-          <td>
+        <td><%= comment.content %></td>
+          <td class="text-end">
             <%= link_to "Ver", comment_path(comment), class: "btn btn-primary btn-sm" %>
           </td>
         </tr>

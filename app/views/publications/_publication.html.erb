@@ -9,11 +9,14 @@
       <td>
       <%= publication.user.username %>
       </td>
-            <td>
+      <td> 
+      <%= publication.description %>
+      </td>
+      <td>
       <%= publication.data_create %>
       </td>
 
-      <td>
+      <td class="text-end">
         <%= link_to 'Ver', publication_path(publication), class: "btn btn-primary btn-sm" %>
       </td>
     </tr>

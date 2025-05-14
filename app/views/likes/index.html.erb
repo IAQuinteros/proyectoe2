@@ -5,16 +5,16 @@
     <thead>
       <tr>
         <th>Usuario</th>
-        <th>Publicación</th>
-        <th>Acción</th>
+        <th>Id - Publicación</th>
+        <th class="text-end">Acción</th>
       </tr>
     </thead>
     <tbody>
       <% @likes.each do |like| %>
         <tr>
           <td><%= like.user.username if like.user %></td>
-          <td><%= like.publication.id if like.publication %></td>
-          <td>
+            <td><%= "#{like.publication.id} - Publicación de #{like.publication.user.username}" if like.publication %> </td>
+          <td class="text-end">
             <%= link_to "Ver", like_path(like), class: "btn btn-primary btn-sm" %>
           </td>
         </tr>

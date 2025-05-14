@@ -5,14 +5,14 @@
     <thead>
       <tr>
         <th>Nombre</th>
-        <th>Acción</th>
+        <th class="text-end">Acción</th>
       </tr>
     </thead>
     <tbody>
       <% @hashtags.each do |hashtag| %>
         <tr>
           <td><%= hashtag.name %></td>
-          <td>
+          <td class="text-end">
             <%= link_to "Ver", hashtag_path(hashtag), class: "btn btn-primary btn-sm" %>
           </td>
         </tr>

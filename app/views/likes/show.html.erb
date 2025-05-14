@@ -1,8 +1,22 @@
 <div class="container mt-4">
-  <h1>Like</h1>
+<br>
+<br>
+<br>
+<br>
+<div class="card text-bg-light mb-3 mx-auto" style="max-width: 18rem;">
+  <div class="card-header">Informacion</div>
+  <div class="card-body">
+    <p class="card-text">
 
   <p><strong>Usuario:</strong> <%= @like.user.username if @like.user %></p>
-  <p><strong>Publicación ID:</strong> <%= @like.publication.id if @like.publication %></p>
+  <p><strong>Like a publicación ID:</strong> <%= "#{@like.publication.id} - Publicación de #{@like.publication.user.username}" if @like.publication %></p>
+
+  <p>
+<strong>Fecha de like: </strong>
+<%= @like.date_create %>
+</p>
 
   <%= link_to "Volver", likes_path, class: "btn btn-secondary mt-3" %>
+</div>
+</div>
 </div>
