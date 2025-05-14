@@ -4,6 +4,8 @@ class Publication < ApplicationRecord
 
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :publication_hashtags
+  has_many :hashtags, through: :publication_hashtags
 
   validates :data_create, presence: true
   validates :description, presence: true, length: { maximum: 255}
