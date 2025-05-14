@@ -1,6 +1,6 @@
+<div class="container mt-4">
 <br>
 <br>
-<h1 class="position-absolute top-0 start-50 translate-middle-x">Publicacion</h1>
 <br>
 <br>
 <div class="card text-bg-light mb-3 mx-auto" style="max-width: 18rem;">
@@ -8,7 +8,7 @@
   <div class="card-body">
     <p class="card-text">
 
-   <p><%= @publication.users.username %></p>
+   <p><%= @publication.user.username %></p>
  
    <br>
     <p>
@@ -19,7 +19,7 @@
 <strong>Likes: </strong>
 <ul>
   <% @publication.likes.each do |like| %>
-    <li><%= like.users.username %></li>
+    <li><%= like.user.username %></li>
   <% end %>
 </ul>
 <p><strong>Descripción:</strong> <%= @publication.description %></p></p>
@@ -27,7 +27,7 @@
 <strong>Comentarios: </strong>
 <% @comments.each do |comment| %>
   <div class="mb-3 p-2 border rounded">
-    <strong><%= comment.users.username %></strong> dijo:
+    <strong><%= comment.user.username %></strong> dijo:
     <p><%= comment.content %></p>
   </div>
 <% end %>
@@ -37,7 +37,10 @@
 <p>
 <%= @publication.data_create %>
 </p>
-
+<td>
+<%= link_to 'Volver', publications_path, class: "btn btn-primary btn-sm" %>
+</td>
 </p>
+  </div>
   </div>
   </div>

@@ -1,2 +1,12 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<div class="container mt-4">
+  <h1>Comentario</h1>
+
+
+  <p><strong>Usuario:</strong> <%= @comment.user.username if @comment.user %></p>
+  <p><strong>Publicación ID:</strong> <%= @comment.publication.id if @comment.publication %></p>
+    <p><strong>Contenido:</strong> <%= @comment.content %></p>
+
+  
+
+  <%= link_to "Volver", comments_path, class: "btn btn-secondary mt-3" %>
+</div>

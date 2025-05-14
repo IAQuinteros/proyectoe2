@@ -1,2 +1,8 @@
-<h1>Likes#show</h1>
-<p>Find me in app/views/likes/show.html.erb</p>
+<div class="container mt-4">
+  <h1>Like</h1>
+
+  <p><strong>Usuario:</strong> <%= @like.user.username if @like.user %></p>
+  <p><strong>Publicación ID:</strong> <%= @like.publication.id if @like.publication %></p>
+
+  <%= link_to "Volver", likes_path, class: "btn btn-secondary mt-3" %>
+</div>

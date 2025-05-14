@@ -5,7 +5,7 @@ class PublicationsController < ApplicationController
 
   def show
     @publication = Publication.find(params[:id])
-    @comments = @publication.comments.includes(:users)
+    @comments = @publication.comments.includes(:user)
 
   end
 

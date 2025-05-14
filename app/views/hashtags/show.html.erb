@@ -1,2 +1,7 @@
-<h1>Hashtags#show</h1>
-<p>Find me in app/views/hashtags/show.html.erb</p>
+<div class="container mt-4">
+  <h1>Hashtag</h1>
+
+  <p><strong>Nombre:</strong> <%= @hashtag.name %></p>
+
+  <%= link_to "Volver", hashtags_path, class: "btn btn-secondary mt-3" %>
+</div>

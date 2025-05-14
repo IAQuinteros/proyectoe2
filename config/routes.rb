@@ -36,8 +36,10 @@ Rails.application.routes.draw do
     resources :hashtags, only: [:index, :show]
   end
 
+  resources :likes, only: [:index, :show]
   resources :followers, only: [:index, :show]
   resources :hashtags, only: [:index, :show]
+  resources :comments, only: [:index, :show]
   
 
 
