@@ -24,13 +24,13 @@ users = [
 ]
 
 publications = [
-Publication.create!(data_create: Date.today, publication_image: "publication_image1.png", description: "description1", users: users[0]),
-Publication.create!(data_create: Date.today, publication_image: "publication_image2.png", description: "description2", users: users[1])
+Publication.create!(data_create: Date.today, publication_image: "publication_image1.png", description: "description1", user: users[0]),
+Publication.create!(data_create: Date.today, publication_image: "publication_image2.png", description: "description2", user: users[1])
 ]
 
-Follower.create!(users: users[0], users2: users[1].id, date_followers: Date.today)
-Follower.create!(users: users[1], users2: users[2].id, date_followers: Date.today)
-Follower.create!(users: users[0], users2: users[2].id, date_followers: Date.today)
+Follower.create!(user: users[0], user2: users[1].id, date_followers: Date.today)
+Follower.create!(user: users[1], user2: users[2].id, date_followers: Date.today)
+Follower.create!(user: users[0], user2: users[2].id, date_followers: Date.today)
 
 hashtags = [
     Hashtag.create!(name:"#publication"),
@@ -41,13 +41,13 @@ PublicationHashtag.create!(publication: publications[0], hashtag: hashtags[0])
 PublicationHashtag.create!(publication: publications[1], hashtag: hashtags[2])
 
 
-Like.create!(date_create: Date.today, users: users[0], publication: publications[1])
-Like.create!(date_create: Date.today, users: users[2], publication: publications[1])
-Like.create!(date_create: Date.today, users: users[1], publication: publications[0])
-Like.create!(date_create: Date.today, users: users[2], publication: publications[0])
+Like.create!(date_create: Date.today, user: users[0], publication: publications[1])
+Like.create!(date_create: Date.today, user: users[2], publication: publications[1])
+Like.create!(date_create: Date.today, user: users[1], publication: publications[0])
+Like.create!(date_create: Date.today, user: users[2], publication: publications[0])
 
 
-Comment.create!(date_create: Date.today, content: "contenido1", actualization_date: Date.today, users: users[1], publication: publications[0])
-Comment.create!(date_create: Date.today, content: "contenido2", actualization_date: Date.today, users: users[2], publication: publications[0])
-Comment.create!(date_create: Date.today, content: "contenido3", actualization_date: Date.today, users: users[0], publication: publications[0])
-Comment.create!(date_create: Date.today, content: "contenido4", actualization_date: Date.today, users: users[2], publication: publications[1])
+Comment.create!(date_create: Date.today, content: "contenido1", actualization_date: Date.today, user: users[1], publication: publications[0])
+Comment.create!(date_create: Date.today, content: "contenido2", actualization_date: Date.today, user: users[2], publication: publications[0])
+Comment.create!(date_create: Date.today, content: "contenido3", actualization_date: Date.today, user: users[0], publication: publications[0])
+Comment.create!(date_create: Date.today, content: "contenido4", actualization_date: Date.today, user: users[2], publication: publications[1])

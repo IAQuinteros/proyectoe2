@@ -42,6 +42,15 @@
 <%= @user.date_create %>
 </p>
 
+<p>
+<strong>Publicaciones creadas: </strong>
+<ul>
+    <% @publications.each do |publication| %>
+      <li>ID de publicación: <%= publication.id %></li>
+    <% end %>
+  </ul>
+</p>
+
 <td>
 <%= link_to 'Volver', users_path %>
 </td>

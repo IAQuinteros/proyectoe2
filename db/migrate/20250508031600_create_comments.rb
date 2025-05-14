@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[8.0]
       t.date :date_create
       t.string :content
       t.date :actualization_date
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.references :publication, null: false, foreign_key: true
 
       t.timestamps

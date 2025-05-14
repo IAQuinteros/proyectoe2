@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :users, class_name: "User"
+  belongs_to :user, class_name: "User"
   belongs_to :publication
 
   validates :date_create, presence: true

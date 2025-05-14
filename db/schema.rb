@@ -18,21 +18,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_031600) do
     t.date "date_create"
     t.string "content"
     t.date "actualization_date"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "publication_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["publication_id"], name: "index_comments_on_publication_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "followers", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.integer "users2"
+    t.bigint "user_id", null: false
+    t.integer "user2"
     t.date "date_followers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_followers_on_users_id"
+    t.index ["user_id"], name: "index_followers_on_user_id"
   end
 
   create_table "hashtags", force: :cascade do |t|
@@ -43,12 +43,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_031600) do
 
   create_table "likes", force: :cascade do |t|
     t.date "date_create"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "publication_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["publication_id"], name: "index_likes_on_publication_id"
-    t.index ["users_id"], name: "index_likes_on_users_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "publication_hashtags", force: :cascade do |t|
@@ -64,10 +64,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_031600) do
     t.string "publication_image"
     t.string "description"
     t.date "data_create"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_publications_on_users_id"
+    t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,11 +83,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_031600) do
   end
 
   add_foreign_key "comments", "publications"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "followers", "users", column: "users_id"
+  add_foreign_key "comments", "users"
+  add_foreign_key "followers", "users"
   add_foreign_key "likes", "publications"
-  add_foreign_key "likes", "users", column: "users_id"
+  add_foreign_key "likes", "users"
   add_foreign_key "publication_hashtags", "hashtags"
   add_foreign_key "publication_hashtags", "publications"
-  add_foreign_key "publications", "users", column: "users_id"
+  add_foreign_key "publications", "users"
 end
