@@ -1,2 +1,22 @@
-<h1>Hashtags#index</h1>
-<p>Find me in app/views/hashtags/index.html.erb</p>
+<div class="container mt-4">
+  <h1>Hashtags</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @hashtags.each do |hashtag| %>
+        <tr>
+          <td>#<%= hashtag.name %></td>
+          <td>
+            <%= link_to "Ver", hashtag_path(hashtag), class: "btn btn-primary btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
